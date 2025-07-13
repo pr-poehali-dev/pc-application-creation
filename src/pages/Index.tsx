@@ -221,7 +221,14 @@ const Index = () => {
                   <p className="text-slate-400 mb-4">
                     Изучи основы стрельбы и тактики
                   </p>
-                  <Button className="w-full bg-orange-600 hover:bg-orange-700">
+                  <Button
+                    className="w-full bg-orange-600 hover:bg-orange-700"
+                    onClick={() =>
+                      alert(
+                        "🎯 Учебка запущена! Добро пожаловать в тренировочный режим!",
+                      )
+                    }
+                  >
                     Начать
                   </Button>
                 </CardContent>
@@ -236,7 +243,10 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-slate-400 mb-4">Сюжетная кампания</p>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Button
+                    className="w-full bg-blue-600 hover:bg-blue-700"
+                    onClick={() => alert("🎮 Сюжетная кампания загружается...")}
+                  >
                     Продолжить
                   </Button>
                 </CardContent>
@@ -253,7 +263,14 @@ const Index = () => {
                   <p className="text-slate-400 mb-4">
                     Сложные задания для опытных
                   </p>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                  <Button
+                    className="w-full bg-purple-600 hover:bg-purple-700"
+                    onClick={() =>
+                      alert(
+                        "⚡ Испытания доступны только для игроков 20+ уровня!",
+                      )
+                    }
+                  >
                     Выбрать
                   </Button>
                 </CardContent>
@@ -282,7 +299,12 @@ const Index = () => {
                       <span className="text-blue-400">1,247</span>
                     </div>
                   </div>
-                  <Button className="w-full bg-red-600 hover:bg-red-700">
+                  <Button
+                    className="w-full bg-red-600 hover:bg-red-700"
+                    onClick={() =>
+                      alert("🔍 Поиск игры... Подключение к серверу...")
+                    }
+                  >
                     Искать игру
                   </Button>
                 </CardContent>
@@ -303,12 +325,14 @@ const Index = () => {
                     <Button
                       variant="outline"
                       className="w-full border-slate-600 text-slate-300"
+                      onClick={() => alert("🏠 Создание комнаты...")}
                     >
                       Создать комнату
                     </Button>
                     <Button
                       variant="outline"
                       className="w-full border-slate-600 text-slate-300"
+                      onClick={() => alert("🔎 Поиск доступных комнат...")}
                     >
                       Найти комнату
                     </Button>
@@ -368,6 +392,14 @@ const Index = () => {
                     <Button
                       className="w-full bg-amber-600 hover:bg-amber-700"
                       disabled={playerCoins < weapon.price}
+                      onClick={() => {
+                        if (playerCoins >= weapon.price) {
+                          setPlayerCoins(playerCoins - weapon.price);
+                          alert(
+                            `🔫 ${weapon.name} куплено! Новый баланс: ${(playerCoins - weapon.price).toLocaleString()}`,
+                          );
+                        }
+                      }}
                     >
                       {playerCoins >= weapon.price
                         ? "Купить"
