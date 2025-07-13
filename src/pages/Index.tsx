@@ -138,7 +138,7 @@ const Index = () => {
         </div>
         <div className="text-right">
           <div className="flex items-center space-x-2 mb-2">
-            <Icon name="Coins" className="text-yellow-500" />
+            <Icon name="DollarSign" className="text-yellow-500" />
             <span className="text-white font-bold">
               {playerCoins.toLocaleString()}
             </span>
@@ -356,7 +356,7 @@ const Index = () => {
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center space-x-1">
                         <Icon
-                          name="Coins"
+                          name="DollarSign"
                           className="text-yellow-500"
                           size={16}
                         />
